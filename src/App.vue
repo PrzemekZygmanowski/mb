@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <Menu v-show="!isMobile"></Menu>
-    <MobileMenu v-show="isMobile"></MobileMenu>
+    <Menu></Menu>
     <router-view />
   </div>
 </template>
 
 <script>
 import Menu from '@/components/Menu.vue';
-import MobileMenu from '@/components/Mobile-Menu.vue';
-import breakPointMixin from '@/mixins/breakPointMixin.js';
 export default {
-  components: { Menu, MobileMenu },
-  mixins: [breakPointMixin],
+  components: { Menu },
   computed: {
     function() {
       return this.isMobile();

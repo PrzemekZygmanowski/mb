@@ -7,19 +7,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .main-title {
-  color: $mb-white;
   font-size: 48px;
-  font-family: $serif;
-  font-weight: 500;
+  font-family: $sansSerif;
+  font-weight: 700;
   @media (min-width: $desktopBreakpoint) {
-    font-size: 72px;
+    font-size: 64px;
+    line-height: 72px;
   }
 }
 .main-subtitle {
-  color: $mb-white;
   font-size: 36px;
-  font-family: $serif;
-  font-weight: 500;
+  font-family: $sansSerif;
+  font-weight: 700;
   @media (min-width: $desktopBreakpoint) {
     font-size: 48px;
   }

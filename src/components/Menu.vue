@@ -1,51 +1,64 @@
 <template>
-  <div
-    class="menu-container"
-    :class="[isMenuTransparent ? 'menu_transparent' : 'menu_color']"
-  >
-    <router-link class="menu_link menu-link" to="/">Strona główna</router-link>
-    <router-link class="menu_link menu-link" to="/owner">O Mnie</router-link>
-    <router-link class="menu_link menu-link" to="/firm">Kancelaria</router-link>
-    <router-link class="menu_link menu-link" to="/contact">Kontakt</router-link>
+  <div class="menu-container">
+    <div class="menu-wrapper">
+      <router-link class="menu_link menu-link" :to="home.url">
+        <img :src="home.icon" class="main-logo" :alt="home.altText" />
+      </router-link>
+      <div class="menu_link-wrapper" v-for="link in links" :key="link.id">
+        <router-link class="menu_link menu-link" :to="link.url"
+          ><span v-if="!isMobile">{{ link.text }}</span
+          ><font-awesome-icon v-if="isMobile" :icon="link.icon"
+        /></router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      windowSize: {
-        x: 0,
-        y: 0,
-      },
-      drawer: false,
-      group: null,
-      distanceScrolled: 0,
+import breakPointMixin from '@/mixins/breakPointMixin.js';
 
-      headerHeight: 600,
-    };
-  },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
-  },
-  methods: {
-    onScroll() {
-      const header = document.getElementById('header');
-      this.distanceScrolled =
-        document.body.scrollTop + header.getBoundingClientRect().top * -1;
+export default {
+  mixins: [breakPointMixin],
+  props: {
+    home: {
+      type: Object,
+      default() {
+        return {
+          altText: 'MB LOGO',
+          icon: 'data/img/logo/MBblack.png',
+          url: '/',
+        };
+      },
+    },
+    links: {
+      type: Array,
+      default() {
+        return [
+          {
+            id: 1,
+            text: 'O mnie',
+            icon: 'fa-solid fa-user-tie',
+            url: '/owner',
+          },
+          {
+            id: 2,
+            text: 'Kancelaria',
+            icon: 'fa-solid fa-building-columns',
+            url: '/firm',
+          },
+          {
+            id: 3,
+            text: 'Kontakt',
+            icon: 'fa-solid fa-phone-flip',
+            url: '/contact',
+          },
+        ];
+      },
     },
   },
   computed: {
-    isMenuTransparent: function () {
-      return this.distanceScrolled < this.headerHeight;
-    },
-  },
-  watch: {
-    group() {
-      this.drawer = false;
+    function() {
+      return this.isMobile();
     },
   },
 };
@@ -54,25 +67,35 @@ export default {
 <style lang="scss">
 @import 'styles/global/_all.scss';
 .menu-container {
+  width: 100vw;
+  background-color: $mb-white;
   position: fixed;
-  width: 100%;
-  height: 40px;
+  top: calc(100% - 70px);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  flex: 2 1 1 1;
-  z-index: 2;
-  transition: ease-in-out 0.1s;
-  &.menu_transparent {
-    background-color: rgba(0, 0, 0, 0.5);
-    .menu_link {
-      color: $mb-white;
-    }
+  justify-content: center;
+  opacity: 0.8;
+  @media (min-width: $desktopBreakpoint) {
+    margin: 0 auto;
+    top: 0;
   }
-  &.menu_color {
-    background-color: $mb-white;
+  .menu-wrapper {
+    width: $mobileWidth;
+    margin: 0 $mobileMargin;
+    margin: 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 2;
+    @media (min-width: $desktopBreakpoint) {
+      width: $desktopBreakpoint;
+    }
     .menu_link {
       color: $mb-black;
+      .main-logo {
+        height: 24px;
+      }
     }
   }
 }
