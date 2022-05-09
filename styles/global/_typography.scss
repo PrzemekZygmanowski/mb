@@ -68,18 +68,18 @@
   }
 }
 
-.card-title {
-  color: $mb-white;
+.icon-title {
+  color: $mb-black;
   font-size: 24px;
-  font-family: $serif;
+  font-family: $sansSerif;
   font-weight: 400;
   @media (min-width: $desktopBreakpoint) {
     font-size: 28px;
   }
 }
 
-.card-text {
-  color: $mb-white;
+.icon-text {
+  color: $mb-black;
   font-size: 16px;
   font-family: $sansSerif;
   font-weight: 400;

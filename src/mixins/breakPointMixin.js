@@ -7,7 +7,7 @@ const breakPointMixin = {
       },
       drawer: false,
       group: null,
-      maxWidth: 1180,
+      maxWidth: 1024,
     };
   },
   mounted() {

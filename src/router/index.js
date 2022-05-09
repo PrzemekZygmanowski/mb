@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+// import Home from '../views/Home.vue';
 // import Owner from "../views/Owner.vue";
 // import Firm from "../views/Firm.vue";
 // import Contact from "../views/Home.vue";
@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/Home.vue'),
   },
   {
     path: '/owner',
