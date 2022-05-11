@@ -25,7 +25,7 @@ export default {
     },
     image: {
       type: String,
-      default: 'data/img/pictures/robo_lawyer.png',
+      default: 'data/img/pictures/MB_header.jpg',
     },
   },
 };
@@ -53,23 +53,29 @@ export default {
       width: $desktopBreakpoint;
     }
     .main-header__picture {
-      display: none;
+      width: 100%;
+
       @media (min-width: $desktopBreakpoint) {
+        position: relative;
         display: block;
-        width: 50%;
-        aspect-ratio: 1;
+        width: 100%;
+        transform: rotateY(180deg);
       }
     }
     .main-header__text-container {
       //   width: $mobileWidth;
       //   margin: $mobileMargin;
-      color: $mb-blue;
+      position: absolute;
+      right: 20%;
+      color: $mb-white;
       display: flex;
-      align-items: flex-start;
+      align-items: flex-end;
       justify-content: center;
       flex-direction: column;
       @media (min-width: $desktopBreakpoint) {
-        width: 50%;
+        // width: 50%;
+        right: 25%;
+
         margin: 0;
       }
     }

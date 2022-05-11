@@ -2,7 +2,6 @@
   <header id="header">
     <div class="header">
       <div class="title-container">
-        <img src="data/img/logo/MBblack.png" class="main-logo" alt="MB LOGO" />
         <div class="">
           <h1 class="main-title title">{{ title }}</h1>
           <h2 class="main-subtitle subtitle">{{ subtitle }}</h2>
@@ -32,7 +31,7 @@ export default {
 .header {
   height: 100vh;
   width: 100%;
-  background-image: url(https://cdn.pixabay.com/photo/2017/06/09/22/56/lady-justice-2388500_960_720.jpg);
+  background-image: url(data/img/pictures/MB_header.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: cover;

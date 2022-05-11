@@ -1,7 +1,7 @@
 <template>
   <div class="big-icon-container">
-    <font-awesome-icon class="icon-title" :icon="icon.icon" />
-    <h3 class="icon-title big-icon__title" v-html="icon.title"></h3>
+    <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
+    <h3 class="icon-title" v-html="icon.title"></h3>
   </div>
 </template>
 
@@ -24,12 +24,13 @@ export default {
   justify-content: space-between;
   color: $mb-black;
   margin: 0 40px;
-
-  .big-icon__title {
-    font-size: 32px;
+  height: 150px;
+  .big-icon {
+    font-size: 64px;
     font-weight: 400;
+    color: $mb-blue;
     @media (min-width: $desktopBreakpoint) {
-      font-size: 40px;
+      font-size: 72px;
     }
   }
 }
