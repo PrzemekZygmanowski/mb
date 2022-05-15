@@ -11,6 +11,7 @@ import { faShield } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/css/swiper.min.css';
+import gsap from 'gsap';
 
 library.add(
   faBuildingColumns,
@@ -24,6 +25,8 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueAwesomeSwiper /* { default options with global component } */);
+
+Vue.use(gsap);
 
 Vue.config.productionTip = false;
 

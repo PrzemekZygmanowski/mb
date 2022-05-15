@@ -24,7 +24,13 @@ export default {
   justify-content: space-between;
   color: $mb-black;
   margin: 0 40px;
+  padding: 20px;
+  border-radius: 3%;
   height: 150px;
+  width: 150px;
+  -webkit-box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
+  box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
   .big-icon {
     font-size: 64px;
     font-weight: 400;

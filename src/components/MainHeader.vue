@@ -34,11 +34,11 @@ export default {
 <style scoped lang="scss">
 @import 'styles/global/_all.scss';
 .main-header {
-  height: 100vh;
+  max-height: 100vh;
   width: $mobileWidth;
-  margin: 0 $mobileMargin;
   @media (min-width: $desktopBreakpoint) {
-    height: 640px;
+    max-height: 640px;
+    width: 100%;
   }
   .main-header__container {
     display: flex;
@@ -49,24 +49,25 @@ export default {
     height: 100%;
     width: 100%;
 
-    @media (min-width: $desktopBreakpoint) {
-      width: $desktopBreakpoint;
-    }
     .main-header__picture {
       width: 100%;
-
+      transition: 0.5s ease;
+      backface-visibility: hidden;
       @media (min-width: $desktopBreakpoint) {
         position: relative;
         display: block;
         width: 100%;
-        transform: rotateY(180deg);
+        max-height: 640px;
+        object-fit: cover;
       }
     }
     .main-header__text-container {
       //   width: $mobileWidth;
       //   margin: $mobileMargin;
+      transition: 0.5s ease;
+      // opacity: 0;
+      width: 90%;
       position: absolute;
-      right: 20%;
       color: $mb-white;
       display: flex;
       align-items: flex-end;
@@ -74,9 +75,7 @@ export default {
       flex-direction: column;
       @media (min-width: $desktopBreakpoint) {
         // width: 50%;
-        right: 25%;
-
-        margin: 0;
+        margin: 0 10% 0 auto;
       }
     }
   }

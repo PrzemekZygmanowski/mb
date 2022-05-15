@@ -1,5 +1,8 @@
 <template>
-  <div class="menu-container">
+  <div
+    class="menu-container"
+    :class="[isMenuTransparent ? 'menu_transparent' : 'menu_color']"
+  >
     <div class="menu-wrapper">
       <router-link class="menu_link menu-link" :to="home.url">
         <img :src="home.icon" class="main-logo" :alt="home.altText" />
