@@ -28,8 +28,15 @@ export default {
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+        centeredSlides: true,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
         autoplay: {
-          delay: 2000,
           disableOnInteraction: true,
         },
       },
@@ -43,25 +50,25 @@ export default {
           {
             id: 1,
             title: 'Prawo karne',
-            imageUrl: 'data/img/logo/icons8-law-64.png',
+            imageUrl: 'data/img/svg/bank-outline.svg',
             imageTitle: 'Prawo Karne',
           },
           {
             id: 2,
             title: 'Prawo cywilne',
-            imageUrl: 'data/img/logo/icons8-justice-64.png',
+            imageUrl: 'data/img/svg/scale-balance.svg',
             imageTitle: 'Prawo cywilne',
           },
           {
             id: 3,
             title: 'Prawo pracy',
-            imageUrl: 'data/img/logo/icons8-workers-64.png',
+            imageUrl: 'data/img/svg/account-hard-hat-outline.svg',
             imageTitle: 'Prawo pracy',
           },
           {
             id: 4,
             title: 'Prawo rodzinne',
-            imageUrl: 'data/img/logo/icons8-family-50.png',
+            imageUrl: 'data/img/svg/human-male-female-child.svg',
             imageTitle: 'Prawo pracy',
           },
         ];

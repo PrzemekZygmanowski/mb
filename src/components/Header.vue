@@ -16,18 +16,18 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Michał Buzar',
+      default: "Michał Buzar",
     },
     subtitle: {
       type: String,
-      default: 'Radca prawny',
+      default: "Radca prawny",
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .header {
   height: 100vh;
   width: 100%;

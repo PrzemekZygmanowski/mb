@@ -11,14 +11,14 @@ const distanceMixin = {
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
     onScroll() {
-      const header = document.getElementById('header');
+      const header = document.getElementById("header");
       this.distanceScrolled =
         document.body.scrollTop + header.getBoundingClientRect().top * -1;
     },

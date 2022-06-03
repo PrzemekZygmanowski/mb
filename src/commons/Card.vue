@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .card-component {
   cursor: inherit;
   text-decoration: none;
@@ -55,7 +55,7 @@ export default {
         position: relative;
         display: inline-block;
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           height: 2px;
           background-color: $mb-white;

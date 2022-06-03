@@ -35,10 +35,9 @@ export default {
 @import 'styles/global/_all.scss';
 .main-header {
   max-height: 100vh;
-  width: $mobileWidth;
+  width: 100%;
   @media (min-width: $desktopBreakpoint) {
     max-height: 640px;
-    width: 100%;
   }
   .main-header__container {
     display: flex;

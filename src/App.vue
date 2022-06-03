@@ -1,31 +1,29 @@
 <template>
-  <div id="app">
-    <Menu></Menu>
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+      <Menu></Menu>
+      <!-- <MobileMenu v-show="isMobile"></MobileMenu> -->
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 import Menu from '@/components/Menu.vue';
+import breakPointMixin from '@/mixins/breakPointMixin.js';
+
 export default {
   components: { Menu },
+  mixins: [breakPointMixin],
+  name: 'App',
   computed: {
     function() {
       return this.isMobile();
     },
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style lang="scss">
-@import 'styles/global/_all.scss';
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-body {
-  background-color: $mb-white;
-}
-</style>

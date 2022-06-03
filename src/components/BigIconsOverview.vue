@@ -1,13 +1,15 @@
 <template>
-  <div class="section-container big-icons-container">
-    <div
-      :key="icon.id"
-      v-for="icon in icons"
-      class="big-icons-overview_wrapper"
-    >
-      <BigIcon :icon="icon"></BigIcon>
+  <v-container transition="scroll-x-transition">
+    <div class="section-container big-icons-container">
+      <div
+        :key="icon.id"
+        v-for="icon in icons"
+        class="big-icons-overview_wrapper"
+      >
+        <BigIcon :icon="icon"></BigIcon>
+      </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>

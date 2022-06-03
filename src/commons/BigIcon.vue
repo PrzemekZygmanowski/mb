@@ -1,12 +1,19 @@
 <template>
   <div class="big-icon-container">
-    <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
+    <v-avatar :color="iconColor" size="70">
+      <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
+    </v-avatar>
     <h3 class="icon-title" v-html="icon.title"></h3>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      iconColor: '#000080',
+    };
+  },
   props: {
     icon: {
       type: Object,
@@ -28,15 +35,13 @@ export default {
   border-radius: 3%;
   height: 150px;
   width: 150px;
-  -webkit-box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
-  box-shadow: 3px 7px 19px -10px rgba(0, 0, 0, 1);
+
   .big-icon {
-    font-size: 64px;
+    height: 30px;
+    font-size: 20px;
     font-weight: 400;
-    color: $mb-blue;
+    color: $mb-white;
     @media (min-width: $desktopBreakpoint) {
-      font-size: 72px;
     }
   }
 }

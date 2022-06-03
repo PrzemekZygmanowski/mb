@@ -1,12 +1,11 @@
 <template>
-  <div
-    class="menu-container"
-    :class="[isMenuTransparent ? 'menu_transparent' : 'menu_color']"
-  >
+  <v-app-bar app color="primary" hide-on-scroll class="menu-container">
+    <router-link class="menu_link menu-link" :to="home.url">
+      <img :src="home.icon" class="main-logo" :alt="home.altText" />
+      <span style="margin: 0 0 0 20px" v-if="!isMobile">{{ home.text }}</span>
+    </router-link>
+    <v-spacer></v-spacer>
     <div class="menu-wrapper">
-      <router-link class="menu_link menu-link" :to="home.url">
-        <img :src="home.icon" class="main-logo" :alt="home.altText" />
-      </router-link>
       <div class="menu_link-wrapper" v-for="link in links" :key="link.id">
         <router-link class="menu_link menu-link" :to="link.url"
           ><span v-if="!isMobile">{{ link.text }}</span
@@ -14,13 +13,15 @@
         /></router-link>
       </div>
     </div>
-  </div>
+  </v-app-bar>
 </template>
 
 <script>
 import breakPointMixin from '@/mixins/breakPointMixin.js';
+import vuetify from '../plugins/vuetify';
 
 export default {
+  vuetify,
   mixins: [breakPointMixin],
   props: {
     home: {
@@ -30,6 +31,7 @@ export default {
           altText: 'MB LOGO',
           icon: 'data/img/logo/MBblack.png',
           url: '/',
+          text: 'Start',
         };
       },
     },
@@ -72,34 +74,29 @@ export default {
 .menu-container {
   width: 100vw;
   background-color: $mb-white;
-  position: fixed;
-  top: calc(100% - 70px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.8;
-  @media (min-width: $desktopBreakpoint) {
+  .v-toolbar__content {
     margin: 0 auto;
-    top: 0;
+    width: $desktopBreakpoint;
+  }
+  .menu_link {
+    color: $mb-black;
+    .main-logo {
+      height: 24px;
+    }
   }
   .menu-wrapper {
-    width: $mobileWidth;
-    margin: 0 $mobileMargin;
+    width: 600px;
+
     margin: 0 auto;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 2;
-    @media (min-width: $desktopBreakpoint) {
-      width: $desktopBreakpoint;
-    }
-    .menu_link {
-      color: $mb-black;
-      .main-logo {
-        height: 24px;
-      }
-    }
   }
 }
 </style>

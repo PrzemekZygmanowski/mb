@@ -27,7 +27,7 @@
 
 <script>
 // @ is an alias to /src
-import SectionTitle from '@/commons/Section-Title.vue';
+import SectionTitle from "@/commons/Section-Title.vue";
 
 export default {
   components: { SectionTitle },
@@ -35,20 +35,20 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Kim Jestem',
+      default: "Kim Jestem",
     },
     owner: {
       type: Object,
       default() {
         return {
-          imageUrl: 'data/img/pictures/robocze.jpg',
-          imageName: 'Michał_Buzar',
-          title: 'Michał Buzar',
-          subtitle: 'Radca Prawny',
+          imageUrl: "data/img/pictures/robocze.jpg",
+          imageName: "Michał_Buzar",
+          title: "Michał Buzar",
+          subtitle: "Radca Prawny",
           about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-          linkUrl: '/',
-          linkText: 'Dowiedz się więcej',
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+          linkUrl: "/",
+          linkText: "Dowiedz się więcej",
         };
       },
     },
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .small-about_title-container {
   width: 100%;
   text-align: center;

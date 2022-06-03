@@ -32,13 +32,14 @@ export default {
     color: $mb-black;
     margin: 0 40px;
     .icon-logo {
-      height: 150px;
+      height: 75px;
       aspect-ratio: 1;
     }
     .icon__title {
       outline: 0;
       position: relative;
       display: inline-block;
+      text-align: center;
       &:after {
         content: '';
         position: absolute;

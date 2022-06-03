@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Card from '@/commons/Card.vue';
+import Card from "@/commons/Card.vue";
 export default {
   components: { Card },
   props: {
@@ -17,27 +17,27 @@ export default {
         return [
           {
             id: 1,
-            title: 'Prawo karne',
-            imageUrl: 'data/img/logo/icons8-law-64.png',
-            imageTitle: 'Prawo Karne',
+            title: "Prawo karne",
+            imageUrl: "data/img/logo/icons8-law-64.png",
+            imageTitle: "Prawo Karne",
           },
           {
             id: 2,
-            title: 'Prawo cywilne',
-            imageUrl: 'data/img/logo/icons8-justice-64.png',
-            imageTitle: 'Prawo cywilne',
+            title: "Prawo cywilne",
+            imageUrl: "data/img/logo/icons8-justice-64.png",
+            imageTitle: "Prawo cywilne",
           },
           {
             id: 3,
-            title: 'Prawo pracy',
-            imageUrl: 'data/img/logo/icons8-workers-64.png',
-            imageTitle: 'Prawo pracy',
+            title: "Prawo pracy",
+            imageUrl: "data/img/logo/icons8-workers-64.png",
+            imageTitle: "Prawo pracy",
           },
           {
             id: 4,
-            title: 'Prawo rodzinne',
-            imageUrl: 'data/img/logo/icons8-family-50.png',
-            imageTitle: 'Prawo pracy',
+            title: "Prawo rodzinne",
+            imageUrl: "data/img/logo/icons8-family-50.png",
+            imageTitle: "Prawo pracy",
           },
         ];
       },
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .cards-overview_container {
   width: $mobileWidth;
   display: grid;

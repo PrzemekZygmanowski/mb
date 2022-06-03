@@ -37,14 +37,14 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
     onScroll() {
-      const header = document.getElementById('header');
+      const header = document.getElementById("header");
       this.distanceScrolled =
         document.body.scrollTop + header.getBoundingClientRect().top * -1;
     },
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .burger {
   top: 50%;
   left: 50%;
@@ -76,7 +76,7 @@ export default {
 .burger:after,
 .burger div {
   background: #fff;
-  content: '';
+  content: "";
   display: block;
   height: 6px;
   border-radius: 3px;

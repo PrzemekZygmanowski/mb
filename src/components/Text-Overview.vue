@@ -1,4 +1,4 @@
-<template>
+<template transition="slide-y-transition">
   <div class="section-container text-overview_container">
     <Section-title :title="title"></Section-title>
     <p class="section-text text-overview_text">{{ text }}</p>
