@@ -34,6 +34,7 @@ export default {
 <style scoped lang="scss">
 @import 'styles/global/_all.scss';
 .main-header {
+  height: 80vh;
   max-height: 100vh;
   width: 100%;
   @media (min-width: $desktopBreakpoint) {
@@ -49,9 +50,12 @@ export default {
     width: 100%;
 
     .main-header__picture {
-      width: 100%;
+      width: 100vw;
+      height: 100%;
       transition: 0.5s ease;
       backface-visibility: hidden;
+      object-fit: cover;
+
       @media (min-width: $desktopBreakpoint) {
         position: relative;
         display: block;
@@ -61,20 +65,24 @@ export default {
       }
     }
     .main-header__text-container {
-      //   width: $mobileWidth;
-      //   margin: $mobileMargin;
-      transition: 0.5s ease;
-      // opacity: 0;
-      width: 90%;
+      width: 100%;
+      margin: 0 auto;
       position: absolute;
+      transform: translateY(-25%);
       color: $mb-white;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-around;
       flex-direction: column;
       @media (min-width: $desktopBreakpoint) {
         // width: 50%;
-        margin: 0 10% 0 auto;
+        // margin: 0 10% 0 auto;
+      }
+      .main-header__title {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .main-header__subtitle {
       }
     }
   }

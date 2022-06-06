@@ -8,6 +8,7 @@ import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { faDove } from '@fortawesome/free-solid-svg-icons';
 import { faShield } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
@@ -21,7 +22,8 @@ library.add(
   faUserTie,
   faCertificate,
   faDove,
-  faShield
+  faShield,
+  faBars
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

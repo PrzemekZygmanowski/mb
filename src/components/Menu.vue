@@ -83,7 +83,7 @@ export default {
     width: $desktopBreakpoint;
   }
   .menu_link {
-    color: $mb-black;
+    color: $mb-white;
     .main-logo {
       height: 24px;
     }

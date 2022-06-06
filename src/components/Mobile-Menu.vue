@@ -1,23 +1,28 @@
 <template>
-  <div>
-    <div class="burger">
-      <div></div>
+  <div class="overflow-hidden mobile-menu_container">
+    <div class="mobile-menu_burger">
+      <v-btn color="primary" elevation="4" fab small @click="active = !active">
+        <font-awesome-icon icon="fa-solid fa-bars"
+      /></v-btn>
     </div>
-    <!-- <div
-      class="menu-container"
-      :class="[isMenuTransparent ? 'menu_transparent' : 'menu_color']"
+    <v-bottom-navigation
+      fixed
+      grow
+      v-model="value"
+      :input-value="active"
+      color="indigo"
     >
-      <router-link class="menu_link menu-link" to="/"
-        >Strona główna</router-link
-      >
-      <router-link class="menu_link menu-link" to="/owner">O Mnie</router-link>
-      <router-link class="menu_link menu-link" to="/firm"
-        >Kancelaria</router-link
-      >
-      <router-link class="menu_link menu-link" to="/contact"
-        >Kontakt</router-link
-      >
-    </div> -->
+      <div v-for="link in links" :key="link.id" class="mobile-menu_wrapper">
+        <router-link class="mobile-menu_link menu-link" :to="link.url">
+          <v-img
+            v-if="link.img"
+            :src="link.img"
+            :aspect-ratio="1"
+            :width="width" />
+          <font-awesome-icon v-if="link.icon" :icon="link.icon"
+        /></router-link>
+      </div>
+    </v-bottom-navigation>
   </div>
 </template>
 
@@ -25,71 +30,65 @@
 export default {
   data() {
     return {
-      windowSize: {
-        x: 0,
-        y: 0,
-      },
-      drawer: false,
-      group: null,
-      distanceScrolled: 0,
-
-      headerHeight: 600,
+      value: 1,
+      active: true,
+      width: 24,
     };
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
-  methods: {
-    onScroll() {
-      const header = document.getElementById("header");
-      this.distanceScrolled =
-        document.body.scrollTop + header.getBoundingClientRect().top * -1;
-    },
-  },
-  computed: {
-    isMenuTransparent: function () {
-      return this.distanceScrolled < this.headerHeight;
-    },
-  },
-  watch: {
-    group() {
-      this.drawer = false;
+  props: {
+    links: {
+      type: Array,
+      default() {
+        return [
+          {
+            id: 1,
+            img: 'data/img/logo/MBblack.png',
+            url: '/',
+            text: 'Start',
+          },
+          {
+            id: 1,
+            text: 'O mnie',
+            icon: 'fa-solid fa-user-tie',
+            url: '/owner',
+          },
+          {
+            id: 2,
+            text: 'Kancelaria',
+            icon: 'fa-solid fa-building-columns',
+            url: '/firm',
+          },
+          {
+            id: 3,
+            text: 'Kontakt',
+            icon: 'fa-solid fa-phone-flip',
+            url: '/contact',
+          },
+        ];
+      },
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import "styles/global/_all.scss";
-.burger {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 50px;
-}
-
-.burger:before,
-.burger:after,
-.burger div {
-  background: #fff;
-  content: "";
-  display: block;
-  height: 6px;
-  border-radius: 3px;
-  margin: 7px 0;
-  transition: 0.5s;
-}
-.burger:hover:before {
-  transform: translateY(12px) rotate(135deg);
-}
-.burger:hover:after {
-  transform: translateY(-12px) rotate(-135deg);
-}
-.burger:hover div {
-  transform: scale(0);
+@import 'styles/global/_all.scss';
+.mobile-menu_container {
+  .mobile-menu_burger {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+  }
+  .mobile-menu_wrapper {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+    .mobile-menu_link {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
 }
 </style>
