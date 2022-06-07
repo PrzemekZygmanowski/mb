@@ -5,10 +5,8 @@
         <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
       </div>
     </div>
-    <!-- <v-avatar :color="iconColor" size="70">
-      <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
-    </v-avatar> -->
     <h3 class="icon-title" v-html="icon.title"></h3>
+    <p class="icon-text">{{ icon.text }}</p>
   </div>
 </template>
 
@@ -33,11 +31,18 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: $mb-black;
-  margin: 0 40px;
-  padding: 20px;
-
+  border: 0.5px solid $mb-blue;
+  border-radius: 5px;
+  width: $mobileWidth;
+  min-height: 300px;
+  padding: 7%;
+  margin-bottom: 20px;
+  @media (min-width: $mobileBreakpoint) {
+    width: 240px;
+    min-height: 400px;
+  }
   .big-icon__first-wrapper {
     position: relative;
     height: 120px;
@@ -47,22 +52,27 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: $mobileBreakpoint) {
+      height: 100px;
+      width: 100px;
+    }
     .big-icon__second-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-
       height: 90px;
       width: 90px;
       background-color: $mb-blue;
       border-radius: 50%;
+      @media (min-width: $mobileBreakpoint) {
+        height: 80px;
+        width: 80px;
+      }
       .big-icon {
         height: 30px;
         font-size: 20px;
         font-weight: 400;
         color: $mb-white;
-        @media (min-width: $desktopBreakpoint) {
-        }
       }
     }
   }

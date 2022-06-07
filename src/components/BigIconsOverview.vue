@@ -1,15 +1,13 @@
 <template>
-  <v-container transition="scroll-x-transition">
-    <div class="section-container big-icons-container">
-      <div
-        :key="icon.id"
-        v-for="icon in icons"
-        class="big-icons-overview_wrapper"
-      >
-        <BigIcon :icon="icon"></BigIcon>
-      </div>
+  <div class="section-container big-icons-container">
+    <div
+      :key="icon.id"
+      v-for="icon in icons"
+      class="big-icons-overview_wrapper"
+    >
+      <BigIcon :icon="icon"></BigIcon>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -26,42 +24,24 @@ export default {
             id: 1,
             title: 'Profesjonalizm',
             icon: 'fa-solid fa-certificate',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
           },
           {
             id: 2,
             title: 'Empatia',
             icon: 'fa-solid fa-dove',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
           },
           {
             id: 3,
             title: 'Doświadczenie',
             icon: 'fa-solid fa-shield',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
           },
         ];
       },
     },
   },
-  //   methods: {
-  //     slideChange(e) {
-  //       this.swiperStates = {
-  //         activeIndex: e.activeIndex,
-  //         isEnd: e.isEnd,
-  //         isBeginning: e.isBeginning,
-  //       };
-  //     },
-  //     changeDirection(e, direction) {
-  //       switch (direction) {
-  //         case 'next': {
-  //           this.swiper.slideNext(400);
-  //           break;
-  //         }
-  //         case 'prev': {
-  //           this.swiper.slidePrev(400);
-  //           break;
-  //         }
-  //       }
-  //     },
-  //   },
 };
 </script>
 
@@ -69,8 +49,11 @@ export default {
 @import 'styles/global/_all.scss';
 .big-icons-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media (min-width: $mobileBreakpoint) {
+    flex-direction: row;
+  }
 }
 </style>

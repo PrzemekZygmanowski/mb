@@ -32,7 +32,7 @@
 
 .section-title {
   font-size: 36px;
-  font-family: $serif;
+  font-family: $sansSerif;
   font-weight: 500;
   @media (min-width: $desktopBreakpoint) {
     font-size: 48px;
@@ -78,7 +78,8 @@
   color: $mb-black;
   font-size: 24px;
   font-family: $sansSerif;
-  font-weight: 400;
+  font-weight: 300;
+  text-transform: uppercase;
   @media (min-width: $desktopBreakpoint) {
     font-size: 28px;
   }
@@ -88,7 +89,8 @@
   color: $mb-black;
   font-size: 16px;
   font-family: $sansSerif;
-  font-weight: 400;
+  font-weight: 300;
+  text-align: center;
   @media (min-width: $desktopBreakpoint) {
     font-size: 18px;
   }
