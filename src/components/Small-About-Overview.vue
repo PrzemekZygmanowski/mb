@@ -12,11 +12,7 @@
         <Section-title :title="owner.title"></Section-title>
         <h4 class="section-small-subtitle" v-html="owner.subtitle"></h4>
         <p class="section-text" v-html="owner.about"></p>
-        <a
-          class="section-text link-reset small-about_link"
-          :href="owner.linkUrl"
-          v-html="owner.linkText"
-        ></a>
+        <LinkButton :btnProps="btnProps"></LinkButton>
       </div>
     </div>
   </div>
@@ -25,9 +21,10 @@
 <script>
 // @ is an alias to /src
 import SectionTitle from '@/commons/Section-Title.vue';
+import LinkButton from '@/commons/LinkButton.vue';
 
 export default {
-  components: { SectionTitle },
+  components: { SectionTitle, LinkButton },
   // @ is an alias to /src
   props: {
     title: {
@@ -44,8 +41,18 @@ export default {
           subtitle: 'Radca Prawny',
           about:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-          linkUrl: '/',
-          linkText: 'Dowiedz się więcej',
+        };
+      },
+    },
+    btnProps: {
+      type: Object,
+      default() {
+        return {
+          link: '/owner',
+          color: '#69b9ff',
+          btnWidth: 340,
+          outlined: false,
+          text: 'Dowiedz się więcej',
         };
       },
     },
@@ -80,8 +87,8 @@ export default {
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    justify-content: space-around;
+    align-items: center;
     .small-about_link {
       color: $mb-black;
     }

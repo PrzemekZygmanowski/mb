@@ -1,7 +1,13 @@
 <template>
   <div class="overflow-hidden mobile-menu_container">
     <div class="mobile-menu_burger">
-      <v-btn color="primary" elevation="4" fab small @click="active = !active">
+      <v-btn
+        :color="btnColor"
+        elevation="4"
+        fab
+        small
+        @click="active = !active"
+      >
         <font-awesome-icon icon="fa-solid fa-bars"
       /></v-btn>
     </div>
@@ -33,6 +39,7 @@ export default {
       value: 1,
       active: true,
       width: 24,
+      btnColor: '#69b9ff',
     };
   },
   props: {
@@ -47,19 +54,19 @@ export default {
             text: 'Start',
           },
           {
-            id: 1,
+            id: 2,
             text: 'O mnie',
             icon: 'fa-solid fa-user-tie',
             url: '/owner',
           },
           {
-            id: 2,
+            id: 3,
             text: 'Kancelaria',
             icon: 'fa-solid fa-building-columns',
             url: '/firm',
           },
           {
-            id: 3,
+            id: 4,
             text: 'Kontakt',
             icon: 'fa-solid fa-phone-flip',
             url: '/contact',
@@ -78,6 +85,7 @@ export default {
     position: fixed;
     top: 5%;
     right: 5%;
+    z-index: 10000;
   }
   .mobile-menu_wrapper {
     display: flex;

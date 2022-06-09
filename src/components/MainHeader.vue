@@ -25,7 +25,7 @@ export default {
     },
     image: {
       type: String,
-      default: 'data/img/pictures/MB_header.jpg',
+      default: 'data/img/pictures/header.jpg',
     },
   },
 };

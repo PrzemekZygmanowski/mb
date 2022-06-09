@@ -1,3 +1,4 @@
+@import 'styles/scss/_variables.scss';
 .section-container {
   margin: 40px auto 0 auto;
   width: $mobileWidth;
@@ -6,4 +7,9 @@
     max-width: $mobileBreakpoint;
     margin: 80px auto 0 auto;
   }
+}
+
+.dark-section-container {
+  background-color: $mb-black;
+  width: 100vw;
 }
