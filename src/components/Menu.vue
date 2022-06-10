@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" hide-on-scroll class="menu-container">
+  <v-app-bar color="primary" class="menu-container">
     <router-link class="menu_link menu-link" :to="home.url">
       <img :src="home.icon" class="main-logo" :alt="home.altText" />
       <span style="margin: 0 0 0 20px" v-if="!isMobile">{{ home.text }}</span>

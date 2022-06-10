@@ -121,3 +121,14 @@
 .link-reset {
   text-decoration: none;
 }
+
+.footer-text {
+  color: $mb-white;
+  font-family: $sansSerif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 20px;
+  }
+}
