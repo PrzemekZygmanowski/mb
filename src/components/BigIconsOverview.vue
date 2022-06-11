@@ -18,28 +18,6 @@ export default {
   props: {
     icons: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            title: 'Profesjonalizm',
-            icon: 'fa-solid fa-certificate',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          },
-          {
-            id: 2,
-            title: 'Empatia',
-            icon: 'fa-solid fa-dove',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          },
-          {
-            id: 3,
-            title: 'Doświadczenie',
-            icon: 'fa-solid fa-shield',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          },
-        ];
-      },
     },
   },
 };

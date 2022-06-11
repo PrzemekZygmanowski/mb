@@ -15,38 +15,6 @@ export default {
   props: {
     cards: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            title: 'Prawo karne',
-            imageUrl: 'data/img/logo/icons8-law-64.png',
-            imageTitle: 'Prawo Karne',
-            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
-          },
-          {
-            id: 2,
-            title: 'Prawo cywilne',
-            imageUrl: 'data/img/logo/icons8-justice-64.png',
-            imageTitle: 'Prawo cywilne',
-            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
-          },
-          {
-            id: 3,
-            title: 'Prawo pracy',
-            imageUrl: 'data/img/logo/icons8-workers-64.png',
-            imageTitle: 'Prawo pracy',
-            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
-          },
-          {
-            id: 4,
-            title: 'Prawo rodzinne',
-            imageUrl: 'data/img/logo/icons8-family-50.png',
-            imageTitle: 'Prawo pracy',
-            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
-          },
-        ];
-      },
     },
   },
 };

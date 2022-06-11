@@ -1,16 +1,15 @@
 <template>
-  <v-app-bar color="primary" class="menu-container">
-    <router-link class="menu_link menu-link" :to="home.url">
+  <v-app-bar class="menu-container ma-0 pa-0">
+    <router-link class="menu_link menu-link" :to="home.url" exact>
       <img :src="home.icon" class="main-logo" :alt="home.altText" />
-      <span style="margin: 0 0 0 20px" v-if="!isMobile">{{ home.text }}</span>
+      {{ home.text }}
     </router-link>
     <v-spacer></v-spacer>
     <div class="menu-wrapper">
       <div class="menu_link-wrapper" v-for="link in links" :key="link.id">
-        <router-link class="menu_link menu-link" :to="link.url"
-          ><span v-if="!isMobile">{{ link.text }}</span
-          ><font-awesome-icon v-if="isMobile" :icon="link.icon"
-        /></router-link>
+        <router-link class="menu_link menu-link" :to="link.url" exact>{{
+          link.text
+        }}</router-link>
       </div>
     </div>
   </v-app-bar>
@@ -73,7 +72,7 @@ export default {
 @import 'styles/global/_all.scss';
 .menu-container {
   width: 100vw;
-  background-color: $mb-white;
+  background-color: $mb-white !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,20 +82,52 @@ export default {
     width: $desktopBreakpoint;
   }
   .menu_link {
-    color: $mb-white;
+    color: $mb-black;
     .main-logo {
       height: 24px;
     }
   }
   .menu-wrapper {
     width: 600px;
-
     margin: 0 auto;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 2;
+    .menu_link-wrapper {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .menu_link {
+    display: inline-block;
+    padding: 0 auto 25px auto;
+    color: $mb-black;
+    font-weight: 500;
+    position: relative;
+    &:after {
+      transform: scaleX(0);
+      content: '';
+      position: absolute;
+      height: 2px;
+      background-color: $mb-blue;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+  }
+  .router-link-active {
+    transition: 0.25s ease-out;
+    color: $mb-blue;
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
   }
 }
 </style>

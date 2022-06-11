@@ -17,15 +17,12 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Michał Buzar',
     },
     subtitle: {
       type: String,
-      default: 'Radca prawny',
     },
     image: {
       type: String,
-      default: 'data/img/pictures/header.jpg',
     },
   },
 };
@@ -43,7 +40,7 @@ export default {
   .main-header__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     margin: 0 auto;
     height: 100%;
@@ -55,7 +52,8 @@ export default {
       transition: 0.5s ease;
       backface-visibility: hidden;
       object-fit: cover;
-
+      animation: picture 2s ease-in-out;
+      animation-fill-mode: forwards;
       @media (min-width: $desktopBreakpoint) {
         position: relative;
         display: block;
@@ -66,25 +64,51 @@ export default {
     }
     .main-header__text-container {
       width: 100%;
+      height: 80vh;
+      max-height: 100vh;
       margin: 0 auto;
       position: absolute;
-      transform: translateY(-25%);
       color: $mb-white;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
       flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.2);
+      animation: text-container 1.5s ease-in;
+
       @media (min-width: $desktopBreakpoint) {
-        // width: 50%;
-        // margin: 0 10% 0 auto;
+        height: 640px;
       }
       .main-header__title {
         width: 90%;
-        margin: 0 auto;
+        line-height: 2;
       }
       .main-header__subtitle {
+        line-height: 1.4;
       }
     }
+  }
+}
+@keyframes text-container {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes picture {
+  0% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(2px);
   }
 }
 </style>

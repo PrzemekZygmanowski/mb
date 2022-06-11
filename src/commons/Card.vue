@@ -1,10 +1,12 @@
 <template>
   <v-card :outlined="isOutlined" class="card-container" elevation="0">
     <v-img :src="card.imageUrl" class="card-logo"></v-img>
-    <v-card-title class="card__title"> {{ card.title }} </v-card-title>
-    <v-card-tex class="card__text">
+    <v-card-title class="card__title section-small-subtitle">
+      {{ card.title }}
+    </v-card-title>
+    <v-card-text class="card__text section-text">
       {{ card.text }}
-    </v-card-tex>
+    </v-card-text>
     <LinkButton :btnProps="btnProps"></LinkButton>
   </v-card>
 </template>
@@ -50,7 +52,7 @@ export default {
   justify-content: space-evenly;
   background-color: $mb-black;
   color: $mb-white;
-  margin: 20px 0;
+  margin: 40px 0;
   .card-logo {
     aspect-ratio: 1;
     max-height: 50%;
@@ -65,6 +67,7 @@ export default {
     display: inline-block;
   }
   .card__text {
+    color: $mb-white !important;
     padding: 20px;
     text-align: center;
   }

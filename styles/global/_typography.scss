@@ -67,7 +67,7 @@
   font-family: $sansSerif;
   font-size: 16px;
   line-height: 1.8;
-  font-weight: 500;
+  font-weight: 300;
   text-transform: none;
   @media (min-width: $desktopBreakpoint) {
     font-size: 18px;
@@ -97,7 +97,7 @@
 }
 
 .menu-link {
-  color: $mb-white;
+  color: $mb-black;
   font-size: 24px;
   font-family: $sansSerif;
   text-decoration: none;

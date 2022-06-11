@@ -25,36 +25,21 @@ import LinkButton from '@/commons/LinkButton.vue';
 
 export default {
   components: { SectionTitle, LinkButton },
+  data() {
+    return {
+      btnProps: {
+        link: '/owner',
+        color: '#69b9ff',
+        btnWidth: 340,
+        outlined: false,
+        text: 'Dowiedz się więcej',
+      },
+    };
+  },
   // @ is an alias to /src
   props: {
-    title: {
-      type: String,
-      default: 'Kim Jestem',
-    },
     owner: {
       type: Object,
-      default() {
-        return {
-          imageUrl: 'data/img/pictures/MB_header.jpg',
-          imageName: 'Michał_Buzar',
-          title: 'Michał Buzar',
-          subtitle: 'Radca Prawny',
-          about:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-        };
-      },
-    },
-    btnProps: {
-      type: Object,
-      default() {
-        return {
-          link: '/owner',
-          color: '#69b9ff',
-          btnWidth: 340,
-          outlined: false,
-          text: 'Dowiedz się więcej',
-        };
-      },
     },
   },
 };
