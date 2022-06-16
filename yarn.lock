@@ -8043,11 +8043,14 @@ tough-cookie@~2.5.0:
     psl "^1.1.28"
     punycode "^2.1.1"
 
+<<<<<<< HEAD
 travis@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/travis/-/travis-0.1.1.tgz#80fe1c36f6f3b739fce07e6063838ce436357d60"
   integrity sha512-df+lXMENpsegelKLwq2FD7uuIMMjzfhUZLYv8gbDXkJ952eF1PaeXy2f/4H635vBEmQUZNjOYZtge3nOkd6G8A==
 
+=======
+>>>>>>> main
 tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"

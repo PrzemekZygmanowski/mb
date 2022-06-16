@@ -40,8 +40,11 @@ export default {
   padding: 7%;
   margin-bottom: 20px;
   @media (min-width: $mobileBreakpoint) {
-    width: 240px;
+    width: 220px;
     min-height: 400px;
+  }
+  @media (min-width: $desktopBreakpoint) {
+    width: 240px;
   }
   .big-icon__first-wrapper {
     position: relative;

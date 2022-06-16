@@ -1,19 +1,17 @@
 <template>
   <div class="home">
     <MainHeader
-      :title="homeProps.mainHeaderProps.title"
-      :subtitle="homeProps.mainHeaderProps.subtitle"
-      :image="homeProps.mainHeaderProps.image"
+      :title="mainHeaderProps.title"
+      :subtitle="mainHeaderProps.subtitle"
+      :image="mainHeaderProps.image"
     ></MainHeader>
     <TextOverview
-      :title="homeProps.textOverviewProps.title"
-      :text="homeProps.textOverviewProps.text"
+      :title="textOverviewProps.title"
+      :text="textOverviewProps.text"
     ></TextOverview>
-    <BigIconOverview
-      :icons="homeProps.bigIconOverviewProps.icons"
-    ></BigIconOverview>
-    <SpecOverview :cards="homeProps.specOverviewProps.cards"></SpecOverview>
-    <AboutOverview :owner="homeProps.aboutOverviewProps.owner"></AboutOverview>
+    <BigIconOverview :icons="bigIconOverviewProps.icons"></BigIconOverview>
+    <SpecOverview :cards="specOverviewProps.cards"></SpecOverview>
+    <AboutOverview :owner="aboutOverviewProps.owner"></AboutOverview>
   </div>
 </template>
 
@@ -35,10 +33,89 @@ export default {
     AboutOverview,
     BigIconOverview,
   },
-
+  methods: {
+    log() {
+      console.log(JSON.stringify(JSON.parse(homeProps)));
+    },
+  },
+  mounted() {
+    this.log();
+  },
   data() {
     return {
-      homeProps: homeProps,
+      mainHeaderProps: {
+        title: 'Michał Buzar',
+        subtitle: 'Radca prawny',
+        image: 'data/img/pictures/header.jpg',
+      },
+      textOverviewProps: {
+        title: 'Lorem Impsum',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+      },
+      bigIconOverviewProps: {
+        icons: [
+          {
+            id: 1,
+            title: 'Profesjonalizm',
+            icon: 'fa-solid fa-certificate',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          },
+          {
+            id: 2,
+            title: 'Empatia',
+            icon: 'fa-solid fa-dove',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          },
+          {
+            id: 3,
+            title: 'Doświadczenie',
+            icon: 'fa-solid fa-shield',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          },
+        ],
+      },
+      specOverviewProps: {
+        cards: [
+          {
+            id: 1,
+            title: 'Prawo karne',
+            imageUrl: 'data/img/logo/icons8-law-64.png',
+            imageTitle: 'Prawo Karne',
+            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+          },
+          {
+            id: 2,
+            title: 'Prawo cywilne',
+            imageUrl: 'data/img/logo/icons8-justice-64.png',
+            imageTitle: 'Prawo cywilne',
+            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+          },
+          {
+            id: 3,
+            title: 'Prawo pracy',
+            imageUrl: 'data/img/logo/icons8-workers-64.png',
+            imageTitle: 'Prawo pracy',
+            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+          },
+          {
+            id: 4,
+            title: 'Prawo rodzinne',
+            imageUrl: 'data/img/logo/icons8-family-50.png',
+            imageTitle: 'Prawo pracy',
+            text: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+          },
+        ],
+      },
+      aboutOverviewProps: {
+        owner: {
+          imageUrl: 'data/img/pictures/MB_header.jpg',
+          imageName: 'Michał_Buzar',
+          title: 'Michał Buzar',
+          subtitle: 'Radca Prawny',
+          about:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        },
+      },
     };
   },
 };

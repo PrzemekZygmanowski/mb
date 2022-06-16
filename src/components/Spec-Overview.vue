@@ -42,7 +42,7 @@ export default {
       width: calc(640 / 2);
     }
     // @media (min-width: $desktopBreakpoint) {
-    //   width: calc($mobileBreakpoint / 2 - 30px);
+    //   width: calc($mobileBreakpoint/2 - 30px);
     // }
   }
 }
