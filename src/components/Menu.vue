@@ -77,6 +77,7 @@ export default {
   align-items: center;
   justify-content: center;
   opacity: 0.8;
+  z-index: 1000000;
   .v-toolbar__content {
     margin: 0 auto;
     width: $desktopBreakpoint;

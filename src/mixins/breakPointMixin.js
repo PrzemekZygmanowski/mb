@@ -11,10 +11,10 @@ const breakPointMixin = {
     };
   },
   mounted() {
-    window.addEventListener("resize", this.onResize);
+    this.onResize();
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.onResize);
+    this.onResize();
   },
   methods: {
     onResize() {

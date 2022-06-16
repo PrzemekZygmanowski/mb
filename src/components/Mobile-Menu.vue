@@ -8,7 +8,9 @@
         small
         @click="active = !active"
       >
-        <font-awesome-icon icon="fa-solid fa-bars"
+        <font-awesome-icon
+          class="mobile-menu_burger-icon"
+          icon="fa-solid fa-bars"
       /></v-btn>
     </div>
     <v-bottom-navigation
@@ -37,7 +39,7 @@ export default {
   data() {
     return {
       value: 1,
-      active: true,
+      active: false,
       width: 24,
       btnColor: '#69b9ff',
     };
@@ -86,6 +88,9 @@ export default {
     top: 5%;
     right: 5%;
     z-index: 10000;
+    .mobile-menu_burger-icon {
+      color: $mb-white;
+    }
   }
   .mobile-menu_wrapper {
     display: flex;
