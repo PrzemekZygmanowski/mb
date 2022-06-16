@@ -41,9 +41,9 @@ export default {
     @media (min-width: 639px) {
       width: calc(640 / 2);
     }
-    @media (min-width: $desktopBreakpoint) {
-      width: calc($mobileBreakpoint/2 - 30px);
-    }
+    // @media (min-width: $desktopBreakpoint) {
+    //   width: calc($mobileBreakpoint/2 - 30px);
+    // }
   }
 }
 </style>
