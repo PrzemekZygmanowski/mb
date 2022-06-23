@@ -9,13 +9,14 @@ import { faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { faDove } from '@fortawesome/free-solid-svg-icons';
 import { faShield } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/css/swiper.min.css';
 import gsap from 'gsap';
 import vuetify from './plugins/vuetify';
-
 library.add(
   faBuildingColumns,
   faPhoneFlip,
@@ -23,7 +24,9 @@ library.add(
   faCertificate,
   faDove,
   faShield,
-  faBars
+  faBars,
+  faEnvelope,
+  faHouse
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

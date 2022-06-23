@@ -4,6 +4,7 @@
     :height="height"
     padless
     class="mt-8 d-flex flex-column justify-space-between"
+    v-resize="onResize"
   >
     <div class="footer__contact-container ma-0 pa-0">
       <v-container
@@ -11,7 +12,7 @@
       >
         <h3 class="section-small-subtitle">{{ contact.title }}</h3>
         <strong class="section-text">{{ contact.subtitle }}</strong>
-        <div class="footer-contact__links">
+        <div v-show="!isMobile" class="footer-contact__links">
           <a
             :href="`mailto:${contact.email}`"
             class="section-small-subtitle link-reset footer__link"
@@ -28,11 +29,35 @@
             exact
             >{{ contact.addressText }}</router-link
           >
-          <!-- <a
-            :href="`/contact`"
-            class="section-small-subtitle link-reset footer__link"
-            >{{ contact.phoneText }}</a
-          > -->
+        </div>
+        <div v-show="isMobile" class="footer-contact__links">
+          <v-btn
+            :color="btnColor"
+            :href="`mailto:${contact.email}`"
+            class="mx-5"
+            elevation="2"
+            fab
+            small
+            ><font-awesome-icon icon="fa-solid fa-envelope" />
+          </v-btn>
+          <v-btn
+            :color="btnColor"
+            :href="`tel:${contact.phone}`"
+            class="mx-5"
+            elevation="2"
+            fab
+            small
+            ><font-awesome-icon icon="fa-solid fa-phone-flip" />
+          </v-btn>
+          <v-btn
+            :color="btnColor"
+            :href="contact.address"
+            class="mx-5"
+            elevation="2"
+            fab
+            small
+            ><font-awesome-icon icon="fa-solid fa-house" />
+          </v-btn>
         </div>
       </v-container>
     </div>
@@ -47,12 +72,17 @@
 </template>
 
 <script>
+import breakPointMixin from '@/mixins/breakPointMixin.js';
+
 export default {
+  mixins: [breakPointMixin],
+
   data() {
     return {
       footerColor: '#192024',
       copy: 'data/img/svg/copyright-solid.svg',
       height: 250,
+      btnColor: '#69b9ff',
     };
   },
   props: {
@@ -76,6 +106,11 @@ export default {
       },
     },
   },
+  computed: {
+    function() {
+      return this.isMobile();
+    },
+  },
 };
 </script>
 
@@ -97,10 +132,12 @@ export default {
     }
   }
   .footer-contact__links {
-    width: $mobileBreakpoint;
     display: flex;
     justify-content: space-between !important;
     color: $mb-black;
+    @media (min-width: $desktopBreakpoint) {
+      width: $mobileBreakpoint;
+    }
     .footer__link {
       color: $mb-black;
       width: 25%;

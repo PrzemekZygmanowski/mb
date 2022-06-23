@@ -5,16 +5,16 @@
       v-for="icon in icons"
       class="big-icons-overview_wrapper"
     >
-      <BigIcon :icon="icon"></BigIcon>
+      <BigCard :icon="icon"></BigCard>
     </div>
   </div>
 </template>
 
 <script>
-import BigIcon from '@/commons/BigIcon.vue';
+import BigCard from '@/commons/BigCard.vue';
 
 export default {
-  components: { BigIcon },
+  components: { BigCard },
   props: {
     icons: {
       type: Array,

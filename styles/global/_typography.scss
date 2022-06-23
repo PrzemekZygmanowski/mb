@@ -29,6 +29,28 @@
     font-size: 48px;
   }
 }
+.header-title {
+  font-size: 42px;
+  line-height: 1.2;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-align: center;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 60px;
+    line-height: 72px;
+  }
+}
+.header-subtitle {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: $sansSerif;
+  font-weight: 300;
+  letter-spacing: 3px;
+  @media (min-width: $desktopBreakpoint) {
+    font-size: 36px;
+  }
+}
 
 .section-title {
   font-size: 36px;
