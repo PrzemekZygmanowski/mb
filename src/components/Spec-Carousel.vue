@@ -1,21 +1,28 @@
 <template>
   <div class="section-container">
-    <v-carousel v-model="model" hide-delimiters show-arrows-on-hover touch>
-      <v-carousel-item v-for="page in pages" :key="page.id">
-        <v-sheet height="100%" tile>
-          <v-container class="fill-height page__container">
-            <div>
-              <BigIcon :icon="page.imageUrl"></BigIcon>
-            </div>
-            <div>
-              <h3>{{ page.title }}</h3>
-              <h4>{{ page.subtitle }}</h4>
-              <p>{{ page.text }}</p>
-            </div>
-          </v-container>
-        </v-sheet>
-      </v-carousel-item>
-    </v-carousel>
+    <v-card v-for="page in pages" :key="page.id" class="mb-6 page__container">
+      <div class="mx-auto my-5">
+        <BigIcon :icon="page.imageUrl" class="logo"></BigIcon>
+      </div>
+      <div>
+        <h3 class="icon-title card-title my-4">{{ page.title }}</h3>
+        <h4 class="icon-text my-2">{{ page.subtitle }}</h4>
+        <p class="icon-text my-2">{{ page.text }}</p>
+      </div>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="show = !show">
+          <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        </v-btn>
+      </v-card-actions>
+      <v-expand-transition>
+        <div v-show="show">
+          <v-divider></v-divider>
+          <v-card-text class="icon-text" v-html="page.expandText">
+          </v-card-text>
+        </div>
+      </v-expand-transition>
+    </v-card>
   </div>
 </template>
 
@@ -27,6 +34,7 @@ export default {
 
   data: () => ({
     model: 0,
+    show: false,
   }),
   props: {
     pages: {
@@ -37,8 +45,10 @@ export default {
             id: 1,
             title: 'Prawo karne',
             subtitle: 'Lorem ipsum dolor',
-            imageUrl: 'fa-solid fa-scale-balanced',
+            imageUrl: 'data/img/svg/scale-balance.svg',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+            expandText:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
           },
           {
             id: 2,
@@ -47,6 +57,8 @@ export default {
             imageUrl: 'data/img/logo/icons8-justice-64.png',
             imageTitle: 'Prawo cywilne',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+            expandText:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
           },
           {
             id: 3,
@@ -55,6 +67,8 @@ export default {
             imageUrl: 'data/img/logo/icons8-workers-64.png',
             imageTitle: 'Prawo pracy',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+            expandText:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
           },
           {
             id: 4,
@@ -63,6 +77,8 @@ export default {
             imageUrl: 'data/img/logo/icons8-family-50.png',
             imageTitle: 'Prawo pracy',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
+            expandText:
+              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum      voluptates totam iure, neque cumque temporibus obcaecati placeat quidem      nemo suscipit sequi nihil sed eveniet odit, tempora sunt, ipsam dolores!',
           },
         ];
       },
@@ -76,5 +92,8 @@ export default {
 .page__container {
   display: flex;
   flex-direction: column;
+}
+.card-title {
+  text-align: center;
 }
 </style>

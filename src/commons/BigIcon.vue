@@ -1,15 +1,26 @@
 <template>
-  <div class="big-icon__first-wrapper">
-    <div class="big-icon__second-wrapper">
-      <font-awesome-icon class="big-icon icon-title" :icon="icon" />
+  <v-lazy
+    v-model="isActive"
+    :options="{
+      threshold: 0.5,
+    }"
+    min-height="500"
+    transition="scale-transition"
+  >
+    <div class="big-icon__first-wrapper">
+      <div class="big-icon__second-wrapper">
+        <font-awesome-icon class="big-icon icon-title" :icon="icon" />
+        <img :src="icon" class="big-icon logo icon-title" />
+      </div>
     </div>
-  </div>
+  </v-lazy>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      isActive: false,
       iconColor: '#000080',
     };
   },
@@ -54,6 +65,10 @@ export default {
       font-size: 20px;
       font-weight: 400;
       color: $mb-white;
+      &.logo {
+        filter: invert(100%) sepia(1%) saturate(3425%) hue-rotate(50deg)
+          brightness(107%) contrast(105%);
+      }
     }
   }
 }

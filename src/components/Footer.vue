@@ -6,7 +6,7 @@
     class="mt-8 d-flex flex-column justify-space-between"
     v-resize="onResize"
   >
-    <div class="footer__contact-container ma-0 pa-0">
+    <div v-show="contactPage()" class="footer__contact-container ma-0 pa-0">
       <v-container
         class="footer__contact-wrapper pa-0 d-flex flex-column justify-space-around align-center"
       >
@@ -111,6 +111,16 @@ export default {
       return this.isMobile();
     },
   },
+  methods: {
+    contactPage() {
+      if (this.$route.path == '/contact') {
+        this.height = 50;
+        return false;
+      }
+      this.height = 250;
+      return true;
+    },
+  },
 };
 </script>
 
@@ -156,6 +166,6 @@ export default {
 }
 .footer__copy {
   width: 100%;
-  max-height: 20%;
+  max-height: 50px;
 }
 </style>

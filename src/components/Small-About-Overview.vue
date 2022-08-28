@@ -1,21 +1,30 @@
 <template>
-  <div class="section-container">
-    <div class="small-about_container">
-      <div class="small-about_img-wrapper">
-        <img
-          class="small-about_img"
-          :src="owner.imageUrl"
-          :alt="owner.imageName"
-        />
-      </div>
-      <div class="small-about_overview">
-        <Section-title :title="owner.title"></Section-title>
-        <h4 class="section-small-subtitle" v-html="owner.subtitle"></h4>
-        <p class="section-text" v-html="owner.about"></p>
-        <LinkButton :btnProps="btnProps"></LinkButton>
+  <v-lazy
+    v-model="isActive"
+    :options="{
+      threshold: 0.5,
+    }"
+    min-height="500"
+    transition="scroll-y-reverse-transition"
+  >
+    <div class="section-container">
+      <div class="small-about_container">
+        <div class="small-about_img-wrapper">
+          <img
+            class="small-about_img"
+            :src="owner.imageUrl"
+            :alt="owner.imageName"
+          />
+        </div>
+        <div class="small-about_overview">
+          <Section-title :title="owner.title"></Section-title>
+          <h4 class="section-small-subtitle" v-html="owner.subtitle"></h4>
+          <p class="section-text" v-html="owner.about"></p>
+          <LinkButton :btnProps="btnProps"></LinkButton>
+        </div>
       </div>
     </div>
-  </div>
+  </v-lazy>
 </template>
 
 <script>
@@ -27,6 +36,8 @@ export default {
   components: { SectionTitle, LinkButton },
   data() {
     return {
+      isActive: false,
+
       btnProps: {
         link: '/owner',
         color: '#69b9ff',
