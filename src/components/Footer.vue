@@ -96,9 +96,9 @@ export default {
         return {
           title: 'Potrzebujesz pomocy?',
           subtitle: 'Skontaktuj się z nami?',
-          email: 'xcd@cxcv.pl',
+          email: 'michal.buzar@kancelariamb.ogicom.pl',
           emailText: 'Napisz',
-          phone: '123-456-789',
+          phone: '737-337-071',
           phoneText: 'Zadzwóń',
           address: '/contact',
           addressText: 'Odwiedź nas',

@@ -4,7 +4,7 @@
     :options="{
       threshold: 0.5,
     }"
-    min-height="500"
+    min-height="150"
     transition="scale-transition"
   >
     <div class="big-icon__first-wrapper">

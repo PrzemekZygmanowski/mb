@@ -21,7 +21,7 @@
       color="indigo"
     >
       <div v-for="link in links" :key="link.id" class="mobile-menu_wrapper">
-        <router-link class="mobile-menu_link menu-link" :to="link.url">
+        <router-link class="mobile-menu_link menu-link" :to="link.url" exact>
           <v-img
             v-if="link.img"
             :src="link.img"
@@ -101,6 +101,22 @@ export default {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
+      color: $mb-blue;
+      &.router-link-active {
+        color: $mb-white;
+      }
+    }
+  }
+
+  .router-link-active {
+    padding: 5px;
+    transition: 0.25s ease-out;
+    background-color: $mb-blue;
+    color: $mb-white;
+    border-radius: 50%;
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 }

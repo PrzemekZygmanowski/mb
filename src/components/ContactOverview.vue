@@ -1,11 +1,16 @@
 <template>
   <div class="section-container d-flex flex-column align-center">
-    <Section-title v-show="title" :title="title"></Section-title>
+    <div class="contact__common-section" v-show="address">
+      <p class="section-text">adres:</p>
+      <strong class="section-small-subtitle">{{ address.street }}</strong>
+      <strong class="section-small-subtitle">{{ address.city }}</strong>
+    </div>
     <div
       :key="`${phoneNumber.id}-${phoneNumber.number}`"
       v-for="phoneNumber in phoneNumbers"
       class="contact__common-section"
     >
+      <p class="section-text">numer kontaktowy:</p>
       <a
         class="link-reset section-small-subtitle contact_link"
         :href="`tel:${phoneNumber.number}`"
@@ -17,59 +22,30 @@
       v-for="email in mails"
       class="contact__common-section"
     >
+      <p class="section-text">e-mail:</p>
       <a
         class="link-reset section-small-subtitle contact_link"
         :href="`mailto:${email.email}`"
         >{{ email.email }}</a
       >
     </div>
-    <div class="mt-8 d-flex flex-column align-center">
-      <Section-title v-show="secondTitle" :title="secondTitle"></Section-title>
-      <span class="section-text" v-show="offer">{{ offer }}</span>
-    </div>
   </div>
 </template>
 <script>
-// @ is an alias to /src
-import SectionTitle from '@/commons/Section-Title.vue';
-
 export default {
-  components: { SectionTitle },
-  // @ is an alias to /src
   props: {
     title: {
       type: String,
       default: 'skontaktuj sie z nami',
     },
+    address: {
+      type: Object,
+    },
     phoneNumbers: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            number: '123456678',
-          },
-          {
-            id: 2,
-            number: '999888777',
-          },
-        ];
-      },
     },
     mails: {
       type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            email: 'qwe@qwe.com',
-          },
-          {
-            id: 2,
-            email: 'rty@tyu.com',
-          },
-        ];
-      },
     },
   },
 };
@@ -78,29 +54,16 @@ export default {
 <style scoped lang="scss">
 @import 'styles/global/_all.scss';
 
+.contact__common-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .contact_link {
   position: relative;
   padding-bottom: 2px;
   color: $mb-black;
   display: inline-block;
-  &:after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    background-color: $mb-blue;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  &:hover {
-    background-color: transparent;
-    &:after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  }
 }
 </style>

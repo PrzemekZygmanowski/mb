@@ -11,6 +11,7 @@
     ></TextOverview>
     <ContactOverview
       :title="contactOverviewProps.title"
+      :address="contactOverviewProps.address"
       :phoneNumbers="contactOverviewProps.phoneNumbers"
       :mails="contactOverviewProps.mails"
     ></ContactOverview>
@@ -34,26 +35,27 @@ export default {
   data() {
     return {
       mainHeaderProps: {
-        title: '"Hominum causa omne ius constitutum sit"',
-        subtitle: 'Wszelkie prawo ustanawia się ze względu na ludzi.',
-        image: 'data/img/pictures/MB_firm_header.jpg',
+        title: '"Da mihi factum, dabo tibi ius"',
+        subtitle: 'Podaj mi fakty, a ja dam ci prawo.',
+        image: 'data/img/pictures/contact.jpg',
       },
       textOverviewProps: {
         title: 'Lorem Impsum',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+        text: 'Kancelaria mieści się koło poczty, niemalże naprzeciwko placu Reymonta w Łodzi',
       },
       contactOverviewProps: {
         title: 'Lorem Impsum',
+        address: { street: 'ul. Piotrkowska 309 lok. 20', city: '93-004 Łódź' },
         phoneNumbers: [
           {
             id: 1,
-            number: '123456678',
+            number: '737-337-071',
           },
         ],
         mails: [
           {
             id: 1,
-            email: 'qwe@qwe.com',
+            email: 'michal.buzar@kancelariamb.ogicom.pl',
           },
         ],
       },
