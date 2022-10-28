@@ -2,14 +2,19 @@
   <div class="dark-section-container">
     <div class="section-container cards-overview_container">
       <div class="cards-overview_wrapper" v-for="card in cards" :key="card.id">
-        <Card :card="card"></Card>
+        <Card
+          :card="card"
+          data-aos="opacity-on"
+          data-aos-ease="ease-in-out"
+          data-aos-duration="1500"
+        ></Card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Card from '@/commons/Card.vue';
+import Card from "@/commons/Card.vue";
 export default {
   components: { Card },
   props: {
@@ -21,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .cards-overview_container {
   display: grid;
   grid-template-columns: 1fr;

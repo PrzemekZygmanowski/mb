@@ -1,6 +1,11 @@
 <template>
   <div class="big-icon-container">
-    <div class="big-icon__first-wrapper">
+    <div
+      class="big-icon__first-wrapper"
+      data-aos="icon-rotate"
+      data-aos-ease="ease-in-out"
+      data-aos-duration="1500"
+    >
       <div class="big-icon__second-wrapper">
         <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
       </div>
@@ -14,7 +19,7 @@
 export default {
   data() {
     return {
-      iconColor: '#000080',
+      iconColor: "#000080",
     };
   },
   props: {
@@ -26,7 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .big-icon-container {
   display: flex;
   flex-direction: column;

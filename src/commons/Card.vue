@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import LinkButton from './LinkButton.vue';
+import LinkButton from "./LinkButton.vue";
 
 export default {
   components: { LinkButton },
@@ -29,11 +29,11 @@ export default {
       type: Object,
       default() {
         return {
-          link: '/firm',
-          color: '#fafffa',
+          link: "/firm",
+          color: "#fafffa",
           btnWidth: 250,
           outlined: true,
-          text: 'Dowiedz się więcej',
+          text: "Dowiedz się więcej",
         };
       },
     },
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .card-container {
   width: 100%;

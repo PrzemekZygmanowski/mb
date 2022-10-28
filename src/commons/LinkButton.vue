@@ -23,11 +23,11 @@ export default {
       type: Object,
       default() {
         return {
-          link: '/',
-          color: '#fafffa',
+          link: "/",
+          color: "#fafffa",
           btnWidth: 340,
           outlined: false,
-          text: '',
+          text: "",
         };
       },
     },
@@ -36,8 +36,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
-.btn_link {
-  text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
-}
+@import "styles/global/_all.scss";
 </style>
