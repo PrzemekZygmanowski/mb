@@ -32,7 +32,7 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 30px;
-  @media (min-width: 639px) {
+  @media (min-width: $mobileBreakpoint) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px 10%;
@@ -41,14 +41,11 @@ export default {
     width: $mobileBreakpoint;
   }
   .cards-overview_wrapper {
-    width: 100%;
+    width: 84vw;
     aspect-ratio: 1;
-    @media (min-width: 639px) {
-      width: calc(640 / 2);
+    @media (min-width: $mobileBreakpoint) {
+      width: 320px;
     }
-    // @media (min-width: $desktopBreakpoint) {
-    //   width: calc($mobileBreakpoint/2 - 30px);
-    // }
   }
 }
 </style>
