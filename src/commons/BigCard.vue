@@ -7,7 +7,11 @@
       data-aos-duration="1500"
     >
       <div class="big-icon__second-wrapper">
-        <font-awesome-icon class="big-icon icon-title" :icon="icon.icon" />
+        <img
+          :src="backendUrl + icon.icon.data.attributes.url"
+          :alt="icon.imageTitle"
+          class="icon-logo svg-white"
+        />
       </div>
     </div>
     <h3 class="icon-title" v-html="icon.title"></h3>
@@ -20,6 +24,7 @@ export default {
   data() {
     return {
       iconColor: "#000080",
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
     };
   },
   props: {
@@ -84,5 +89,9 @@ export default {
       }
     }
   }
+}
+.icon-logo {
+  height: 50px;
+  aspect-ratio: 1;
 }
 </style>

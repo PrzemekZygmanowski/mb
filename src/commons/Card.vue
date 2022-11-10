@@ -1,6 +1,13 @@
 <template>
   <v-card :outlined="isOutlined" class="card-container" elevation="0">
-    <v-img :src="card.imageUrl" class="card-logo"></v-img>
+    <img
+      :src="backendUrl + card.imageUrl.data.attributes.url"
+      class="card-logo"
+      data-aos="icon-rotate"
+      data-aos-ease="ease-in-out"
+      data-aos-duration="1500"
+      data-aos-delay="300"
+    />
     <v-card-title class="card__title section-small-subtitle">
       {{ card.title }}
     </v-card-title>
@@ -19,6 +26,7 @@ export default {
   data() {
     return {
       isOutlined: false,
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
     };
   },
   props: {

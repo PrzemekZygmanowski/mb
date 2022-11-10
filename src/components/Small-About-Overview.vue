@@ -4,7 +4,7 @@
       <div class="small-about_img-wrapper">
         <img
           class="small-about_img"
-          :src="owner.imageUrl"
+          :src="backendUrl + owner.imageUrl.data.attributes.url"
           :alt="owner.imageName"
         />
       </div>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       isActive: false,
-
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
       btnProps: {
         link: "/owner",
         color: "#69b9ff",

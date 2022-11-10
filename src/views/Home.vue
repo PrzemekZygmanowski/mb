@@ -1,31 +1,28 @@
 <template>
   <div class="home">
     <MainHeader
-      :title="mainHeaderProps.title"
-      :subtitle="mainHeaderProps.subtitle"
-      :image="mainHeaderProps.image"
+      :mainHeader="this.$data.response.data[0].attributes.mainHeader"
     ></MainHeader>
     <TextOverview
-      :title="textOverviewProps.title"
-      :text="textOverviewProps.text"
+      :textOverview="this.$data.response.data[0].attributes.textOverview"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
     ></TextOverview>
     <BigIconOverview
-      :icons="bigIconOverviewProps.icons"
+      :icons="this.$data.response.data[0].attributes.bigIcons.Icon"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
     ></BigIconOverview>
     <SpecOverview
-      :cards="specOverviewProps.cards"
+      :cards="this.$data.response.data[0].attributes.specOverview.card"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
     ></SpecOverview>
     <AboutOverview
-      :owner="aboutOverviewProps.owner"
+      :owner="this.$data.response.data[0].attributes.ownerOwerview[0]"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
@@ -40,7 +37,7 @@ import TextOverview from "@/components/Text-Overview.vue";
 import SpecOverview from "@/components/Spec-Overview.vue";
 import AboutOverview from "@/components/Small-About-Overview.vue";
 import BigIconOverview from "@/components/BigIconsOverview.vue";
-import homeProps from "@/assets/data/home/home.json";
+import getDataMixin from "../mixins/getDataMixin";
 
 export default {
   name: "Home",
@@ -51,16 +48,11 @@ export default {
     AboutOverview,
     BigIconOverview,
   },
-  methods: {
-    log() {
-      console.log(JSON.stringify(JSON.parse(homeProps)));
-    },
-  },
-  mounted() {
-    this.log();
-  },
+  mixins: [getDataMixin],
+
   data() {
     return {
+      urlSuffix: "/api/homes?",
       mainHeaderProps: {
         title: "Michał Buzar",
         subtitle: "Radca prawny",

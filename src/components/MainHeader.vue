@@ -1,11 +1,17 @@
 <template>
-  <header id="main-header">
+  <header v-if="mainHeader" id="main-header">
     <div class="main-header">
       <div class="main-header__container">
-        <img :src="image" class="main-header__picture" alt="Buzar" />
+        <img
+          :src="backendUrl + mainHeader.image.data.attributes.url"
+          class="main-header__picture"
+          alt="Buzar"
+        />
         <div class="main-header__text-container">
-          <h1 class="main-header__title main-title">{{ title }}</h1>
-          <h2 class="main-header__subtitle main-subtitle">{{ subtitle }}</h2>
+          <h1 class="main-header__title main-title">{{ mainHeader.title }}</h1>
+          <h2 class="main-header__subtitle main-subtitle">
+            {{ mainHeader.subtitle }}
+          </h2>
         </div>
       </div>
     </div>
@@ -14,22 +20,21 @@
 
 <script>
 export default {
+  data() {
+    return {
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
+    };
+  },
   props: {
-    title: {
-      type: String,
-    },
-    subtitle: {
-      type: String,
-    },
-    image: {
-      type: String,
+    mainHeader: {
+      type: Object,
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .main-header {
   height: 80vh;
   max-height: 100vh;
