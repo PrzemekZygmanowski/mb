@@ -1,0 +1,30 @@
+{
+  "mainHeaderProps": {
+    "title": "\"Da mihi factum, dabo tibi ius\"",
+    "subtitle": "Podaj mi fakty, a ja dam ci prawo.",
+    "image": "data/img/pictures/contact.jpg"
+  },
+  "textOverviewProps": {
+    "title": "Lorem Impsum",
+    "text": "Kancelaria mieści się koło poczty, niemalże naprzeciwko placu Reymonta w Łodzi"
+  },
+  "contactOverviewProps": {
+    "title": "Lorem Impsum",
+    "address": {
+      "street": "ul. Piotrkowska 309 lok. 20",
+      "city": "93-004 Łódź"
+    },
+    "phoneNumbers": [
+      {
+        "id": 1,
+        "number": "737-337-071"
+      }
+    ],
+    "mails": [
+      {
+        "id": 1,
+        "email": "michal.buzar@kancelariamb.ogicom.pl"
+      }
+    ]
+  }
+}

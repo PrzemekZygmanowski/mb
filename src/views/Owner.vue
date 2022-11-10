@@ -42,7 +42,7 @@ import AboutContent from "@/components/AboutContent.vue";
 import getDataMixin from "../mixins/getDataMixin";
 
 export default {
-  name: "Home",
+  name: "Owner",
   components: {
     Header,
     TextOverview,

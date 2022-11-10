@@ -1,22 +1,19 @@
 <template>
   <div class="contact">
-    <Header
-      :title="mainHeaderProps.title"
-      :subtitle="mainHeaderProps.subtitle"
-      :image="mainHeaderProps.image"
-    ></Header>
+    <Header :header="this.$data.response.data[0].attributes.header"></Header>
     <TextOverview
-      :title="textOverviewProps.title"
-      :text="textOverviewProps.text"
+      :textOverview="this.$data.response.data[0].attributes.textOverview"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
     ></TextOverview>
     <ContactOverview
       :title="contactOverviewProps.title"
-      :address="contactOverviewProps.address"
-      :phoneNumbers="contactOverviewProps.phoneNumbers"
-      :mails="contactOverviewProps.mails"
+      :address="this.$data.response.data[0].attributes.address"
+      :phoneNumbers="
+        this.$data.response.data[0].attributes.phoneNumbers.phoneNumber
+      "
+      :mails="this.$data.response.data[0].attributes.mails.mail"
       data-aos="opacity-on"
       data-aos-ease="ease-in-out"
       data-aos-duration="1500"
@@ -29,42 +26,20 @@
 import Header from "@/components/Header.vue";
 import TextOverview from "@/components/Text-Overview.vue";
 import ContactOverview from "@/components/ContactOverview.vue";
+import getDataMixin from "../mixins/getDataMixin";
 
 export default {
-  name: "Home",
+  name: "Contact",
   components: {
     Header,
     TextOverview,
     ContactOverview,
   },
+  mixins: [getDataMixin],
 
   data() {
     return {
-      mainHeaderProps: {
-        title: '"Da mihi factum, dabo tibi ius"',
-        subtitle: "Podaj mi fakty, a ja dam ci prawo.",
-        image: "data/img/pictures/contact.jpg",
-      },
-      textOverviewProps: {
-        title: "Lorem Impsum",
-        text: "Kancelaria mieści się koło poczty, niemalże naprzeciwko placu Reymonta w Łodzi",
-      },
-      contactOverviewProps: {
-        title: "Lorem Impsum",
-        address: { street: "ul. Piotrkowska 309 lok. 20", city: "93-004 Łódź" },
-        phoneNumbers: [
-          {
-            id: 1,
-            number: "737-337-071",
-          },
-        ],
-        mails: [
-          {
-            id: 1,
-            email: "michal.buzar@kancelariamb.ogicom.pl",
-          },
-        ],
-      },
+      urlSuffix: "/api/contacts?",
     };
   },
 };
