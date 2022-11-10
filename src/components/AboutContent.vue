@@ -6,7 +6,7 @@
     >
       <div class="about_img-wrapper">
         <img
-          :src="content.imageUrl"
+          :src="backendUrl + content.imageUrl.data.attributes.url"
           :alt="content.imageName"
           v-show="content.text"
           class="about_img"
@@ -21,10 +21,15 @@
 
 <script>
 // @ is an alias to /src
-import vuetify from '@/plugins/vuetify';
+import vuetify from "@/plugins/vuetify";
 
 export default {
   vuetify,
+  data() {
+    return {
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
+    };
+  },
   props: {
     content: {
       type: Object,
@@ -34,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .about_title-container {
   width: 100%;
   text-align: center;

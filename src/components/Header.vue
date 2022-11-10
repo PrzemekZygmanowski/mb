@@ -2,10 +2,16 @@
   <header id="header">
     <div class="header">
       <div class="header__container">
-        <img :src="image" class="header__picture" alt="kancelaria" />
+        <img
+          :src="backendUrl + header.image.data.attributes.url"
+          class="header__picture"
+          alt="kancelaria"
+        />
         <div class="header__text-container">
-          <h2 class="header__title header-title">{{ title }}</h2>
-          <h3 class="header__subtitle header-subtitle">{{ subtitle }}</h3>
+          <h2 class="header__title header-title">{{ header.title }}</h2>
+          <h3 class="header__subtitle header-subtitle">
+            {{ header.subtitle }}
+          </h3>
         </div>
       </div>
     </div>
@@ -14,7 +20,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      backendUrl: process.env.VUE_APP_BACKEND_URL,
+    };
+  },
   props: {
+    header: {
+      type: Object,
+    },
     title: {
       type: String,
     },
@@ -29,7 +43,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 .header {
   height: 80vh;
   max-height: 100vh;

@@ -33,7 +33,7 @@ const getDataMixin = {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         this.response = await res.json();
-        console.log(this.response.data[0].attributes.textOverview);
+        console.log(this.response.data[0].attributes.header);
         this.loading = false;
       }
     },
