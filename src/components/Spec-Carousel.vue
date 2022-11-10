@@ -13,7 +13,7 @@
       </div>
       <v-card-actions v-if="page.expandText">
         <v-spacer></v-spacer>
-        <v-btn icon fab color="#69b9ff" @click="expandCard(page.id)">
+        <v-btn icon fab :color="chevronColor" @click="expandCard(page.id)">
           <v-icon large>{{
             page.id === selectedIndex ? "mdi-chevron-up" : "mdi-chevron-down"
           }}</v-icon>
@@ -40,6 +40,7 @@ export default {
     model: 0,
     selectedIndex: null,
     backendUrl: process.env.VUE_APP_BACKEND_URL,
+    chevronColor: "#69b9ff",
     show: false,
   }),
   props: {

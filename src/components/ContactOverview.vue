@@ -1,5 +1,6 @@
 <template>
   <div class="section-container d-flex flex-column align-center">
+    <Section-title v-show="this.title" :title="this.title"></Section-title>
     <div class="contact__common-section" v-show="address">
       <p class="section-text">adres:</p>
       <strong class="section-small-subtitle">{{ address.street }}</strong>
@@ -18,25 +19,29 @@
       >
     </div>
     <div
-      :key="`${email.id}-${email.email}`"
+      :key="`${email.id}-${email.mail}`"
       v-for="email in mails"
       class="contact__common-section"
     >
       <p class="section-text">e-mail:</p>
       <a
         class="link-reset section-small-subtitle contact_link"
-        :href="`mailto:${email.email}`"
-        >{{ email.email }}</a
+        :href="`mailto:${email.mail}`"
+        >{{ email.mail }}</a
       >
     </div>
   </div>
 </template>
 <script>
+import SectionTitle from "@/commons/Section-Title.vue";
+
 export default {
+  components: { SectionTitle },
+
   props: {
     title: {
       type: String,
-      default: 'skontaktuj sie z nami',
+      default: "Skontaktuj się z nami",
     },
     address: {
       type: Object,
@@ -52,7 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .contact__common-section {
   display: flex;

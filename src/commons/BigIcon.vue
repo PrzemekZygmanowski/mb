@@ -7,7 +7,13 @@
     min-height="150"
     transition="scale-transition"
   >
-    <div class="big-icon__first-wrapper">
+    <div
+      class="big-icon__first-wrapper"
+      data-aos="icon-rotate"
+      data-aos-ease="ease-in-out"
+      data-aos-duration="1500"
+      data-aos-delay="400"
+    >
       <div class="big-icon__second-wrapper">
         <font-awesome-icon class="big-icon icon-title" :icon="icon" />
         <img :src="icon" class="big-icon logo icon-title" />
@@ -21,7 +27,7 @@ export default {
   data() {
     return {
       isActive: false,
-      iconColor: '#000080',
+      iconColor: "#000080",
     };
   },
   props: {
@@ -33,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'styles/global/_all.scss';
+@import "styles/global/_all.scss";
 
 .big-icon__first-wrapper {
   position: relative;
